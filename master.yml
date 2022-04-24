@@ -1,0 +1,17 @@
+---
+- hosts: apcser
+  user: ansible
+  become: yes
+  connection: ssh
+  roles:
+      - apache
+      - java
+
+- hosts: ngxser
+  user: ansible
+  become: yes
+  connection: ssh
+  roles:
+      - nginx
+
+# /etc/ansible

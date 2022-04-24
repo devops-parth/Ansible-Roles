@@ -1,0 +1,12 @@
+
+---
+# tasks file for nginx
+- name: Installing Apache
+  yum: pkg=nginx state=installed update_cache=true
+  notify: successmessage
+
+- name: copy index.html
+  copy: src=index.html dest=/usr/share/nginx/html
+  notify: restart nginx
+
+# sudo nano roles/nginx/tasks/main.yml

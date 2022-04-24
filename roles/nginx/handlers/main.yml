@@ -1,0 +1,12 @@
+---
+# handlers file for nginx
+- name: restart nginx
+  service:
+      name: nginx
+      enabled: yes
+      state: restarted
+
+- name: successmessage
+  command: echo "Installation Successful"
+
+# sudo nano roles/nginx/handlers/main.yml

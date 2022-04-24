@@ -1,0 +1,13 @@
+---
+# tasks file for apache
+- name: Installing Apache
+  yum: name=httpd state=latest
+  notify: successmessage
+- name: Starting_apache
+  command: apachectl start
+
+- name: copy index.html
+  copy: src=index.html dest=/var/www/html
+  notify: restart apache
+
+# sudo nano roles/apache/tasks/main.yml       

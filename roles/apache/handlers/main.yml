@@ -1,0 +1,12 @@
+---
+# handlers file for apache
+- name: restart apache
+  service:
+      name: httpd
+      enabled: yes
+      state: restarted
+
+- name: successmessage
+  command: echo "Installation Successful"
+
+# sudo nano roles/apache/handlers/main.yml
